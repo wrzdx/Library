@@ -41,6 +41,18 @@ function createBookNode(book) {
         <td>${book.status ? "Read" : "In Progress"}</td>
         <td><button class="removeBtn">${svg}</button></td>
     `;
+    node.children.item(4).addEventListener("click",
+      e => {
+        e.target.innerText = e.target.innerText === "Read" ? "In Progress" : "Read";
+        const el = myLibrary.find((el) => el["id"] === book.id);
+        if (el) {
+          el.status = !el.status;
+        }
+        
+        updateStatistics();
+      }
+    )
+
     return node;
 }
 
@@ -53,15 +65,25 @@ function addBookToPage(book) {
       const id = tr.children[0].innerText;
       removeBookFromLibrary(id);
       tr.remove();
+      updateStatistics()
     }
   )
   table.appendChild(node);
+  updateStatistics();
 }
 
 function displayBooks() {
   for (book of myLibrary) {
     addBookToPage(book);
   }
+}
+
+function updateStatistics() {
+  const totalNumberOfBooks = myLibrary.length;
+  const numberOfReadBooks = myLibrary.filter(book => book.status).length;
+  const stats = document.querySelector(".statistics").children
+  stats.item(0).innerText = "Total: " + totalNumberOfBooks;
+  stats.item(1).innerText = "You read: " + numberOfReadBooks;
 }
 
 function parseBook(form) {

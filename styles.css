@@ -43,8 +43,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: minmax(min-content, 420px) 3fr;
-  grid-template-rows: auto 1fr;
-  min-height: 100vh;
+  grid-template-rows: 6rem calc(100dvh - 6rem);
 }
 
 .sidebar {
@@ -162,13 +161,29 @@ footer a:hover {
   font-size: 3rem;
 }
 
+.books {
+  overflow: auto;
+}
 
 table {
-  table-layout: fixed;
-  width: 100%;
-  margin: 24px auto;
   font-size: 1.8rem;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0; 
+  width: 100%;
+  border-bottom: 2px solid var(--blue);
+}
+
+
+table th {
+  position: sticky;
+  top: 0;
+  background-color: var(--light);
+  border-bottom: 2px solid var(--blue);
+}
+
+th:first-child,
+td:first-child {
+  display: none;
 }
 
 th:nth-child(n+3),
@@ -180,10 +195,6 @@ td:nth-child(n+3) {
 th, td {
   text-align: center;
   padding: 4px 12px;
-}
-
-thead tr {
-  border-bottom: 2px solid var(--blue);
 }
 
 .removeBtn {
@@ -201,4 +212,10 @@ thead tr {
 
 .removeBtn svg:hover {
   filter: brightness(80%);
+}
+
+.books td:nth-child(5):hover {
+  cursor: pointer;
+  /* filter: brightness(70%); */
+  color: var(--red);
 }
