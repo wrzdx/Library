@@ -19,6 +19,9 @@ function Book(title, author, numberOfPages, status) {
 
     return msg;
   };
+  this.changeStatus = function () {
+    this.status = !this.status; 
+  };
 }
 
 function addBookToLibrary(title, author, numberOfPages, status) {
@@ -44,11 +47,7 @@ function createBookNode(book) {
     node.children.item(4).addEventListener("click",
       e => {
         e.target.innerText = e.target.innerText === "Read" ? "In Progress" : "Read";
-        const el = myLibrary.find((el) => el["id"] === book.id);
-        if (el) {
-          el.status = !el.status;
-        }
-        
+        book.changeStatus();
         updateStatistics();
       }
     )
