@@ -8,6 +8,60 @@
   <script src="./script.js" defer></script>
 </head>
 <body>
-  
+  <div class="container">
+    <div class="sidebar">
+      <header>
+        Eugene's Library
+      </header>
+      <form action="">
+        <p>
+          <label for="title"></label>
+          <input type="text" name="title" maxlength="200" id="title" 
+          placeholder="What is the title of the book?" required>
+        </p>
+        <p>
+          <input type="text" name="author" maxlength="200" 
+          placeholder="What is the author of the book?" required>
+        </p>
+        <p>
+          <input type="tel" name="numberOfPages" max="100000" pattern="[0-9]*"
+          placeholder="How many pages are in the book" value="0" required>
+        </p>
+        <p class="checkbox">
+          <input type="checkbox" name="isRead" id="isRead">
+          <label for="isRead">I have already read this book!</label>
+        </p>
+        <button type="submit">
+          Add a new book
+        </button>
+      </form>
+      <footer>
+        Created by
+        <a href="https://github.com/wrzdx">wrzdx</a>
+      </footer>
+    </div>
+    <div class="statistics">
+
+    </div>
+    <div class="books">
+      <table>
+        <colgroup>
+          <col style="visibility: collapse;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Number of Pages</th>
+            <th>Status</th>
+            <th>Remove</th>
+          </tr>
+          <tbody>
+
+          </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 </html>
