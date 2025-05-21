@@ -28,8 +28,8 @@
           placeholder="How many pages are in the book" value="0" required>
         </p>
         <p class="checkbox">
-          <input type="checkbox" name="isRead" id="isRead">
-          <label for="isRead">I have already read this book!</label>
+          <input type="checkbox" name="status" id="status">
+          <label for="status">I have already read this book!</label>
         </p>
         <button type="submit">
           Add a new book
@@ -41,7 +41,12 @@
       </footer>
     </div>
     <div class="statistics">
-
+      <p>
+        Total: 0
+      </p>
+      <p>
+        You read: 0
+      </p>
     </div>
     <div class="books">
       <table>
@@ -50,15 +55,14 @@
         </colgroup>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Number of Pages</th>
-            <th>Status</th>
-            <th>Remove</th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Number of Pages</th>
+            <th scope="col">Status</th>
+            <th scope="col">Remove</th>
           </tr>
           <tbody>
-
           </tbody>
       </table>
     </div>

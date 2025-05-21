@@ -31,12 +31,13 @@ input, button, textarea, select {
 
 body {
   --dark: #0d0106;
-  --light: #eff1ed;
+  --light: #f8faf7;
   --blue: #3972a7;
   --red: #ff5e5b;
 
   font-family: 'Ancizar Sans', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: var(--blue);
+  background-color: var(--light);
 }
 
 .container {
@@ -44,7 +45,6 @@ body {
   grid-template-columns: minmax(min-content, 420px) 3fr;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
-  background-color: var(--light);
 }
 
 .sidebar {
@@ -64,6 +64,7 @@ header {
   font-weight: 800;
   margin-bottom: 80px;
 }
+
 
 .sidebar form {
   display: grid;
@@ -151,6 +152,53 @@ footer a:hover {
 }
 
 .statistics {
+  padding: 18px 36px;
   grid-column: 2;
   grid-row: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 96px;
+  font-size: 3rem;
+}
+
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  margin: 24px auto;
+  font-size: 1.8rem;
+  border-collapse: collapse;
+}
+
+th:nth-child(n+3),
+td:nth-child(n+3) {
+  border-left: 2px solid var(--blue);
+}
+
+
+th, td {
+  text-align: center;
+  padding: 4px 12px;
+}
+
+thead tr {
+  border-bottom: 2px solid var(--blue);
+}
+
+.removeBtn {
+  border: none;
+  background: none;
+  margin: auto;
+  cursor: pointer;
+}
+
+.removeBtn svg {
+  margin-top: 0.4em;
+  width: 1.2em;
+  fill: var(--red);
+}
+
+.removeBtn svg:hover {
+  filter: brightness(80%);
 }
