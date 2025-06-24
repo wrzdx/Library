@@ -86,7 +86,11 @@ function updateStatistics() {
 }
 
 function parseBook(form) {
-  
+  const pages = form.querySelector('input[name="numberOfPages"');
+  if (!pages.checkValidity()) {
+    pages.setCustomValidity("Enter correct number of pages");
+  }
+
   if (!form.checkValidity()) {
     form.reportValidity();
     return null;
@@ -117,5 +121,16 @@ document.querySelector("form button").addEventListener("click",
     addBookToPage(myLibrary.at(-1));
     form.reset();
     e.preventDefault();
+  }
+)
+
+document.querySelector('form input[name="numberOfPages"]').addEventListener(
+  "input",
+  (e) => {
+    e.target.setCustomValidity("");
+    if (!e.target.checkValidity()) {
+      e.target.setCustomValidity("Enter correct number of pages");
+      e.target.reportValidity();
+    }
   }
 )
