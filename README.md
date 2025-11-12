@@ -1,6 +1,6 @@
 # Library
 
-A simple book tracking app built with JavaScript as part of [The Odin Project](https://www.theodinproject.com/) curriculum. Practice working with objects, DOM manipulation, and local storage.
+A lightweight book management app that lets you track, add, and organize your reading list using JavaScript, localStorage, and dynamic DOM updates.
 
 ## Preview
 
